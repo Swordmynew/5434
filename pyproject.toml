@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "comp5434-task2"
+version = "0.1.0"
+description = "Reproducible Spark and custom neural review rating pipeline"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "numpy==2.2.4", "pandas==2.2.3", "pyarrow==19.0.1",
+  "scipy==1.15.2", "pyspark==3.5.8", "transformers==4.49.0",
+  "sentencepiece==0.2.0", "psutil==7.0.0", "protobuf>=4.25,<6",
+  "setuptools==78.1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5"]
+
+[project.scripts]
+task2 = "task2.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["task2*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["spark: requires a working Java/Spark runtime"]

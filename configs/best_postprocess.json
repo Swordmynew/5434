@@ -1,0 +1,15 @@
+{
+  "source_model": "text",
+  "transform": "uniform_label_mixture_inverse_v1",
+  "rho": 0.2562270314414046,
+  "uniform_rating_mean": 3.0,
+  "rating_bounds": [1.0, 5.0],
+  "parameter_fit_source": "Fixed calibration rating-title hint counts; no leaderboard score fitting",
+  "title_hint_rows": 4898,
+  "matching_hint_labels": 3894,
+  "source_diagnostics_sha256": "587da7170767f58f8ab12f061be4d716900a9d962cbbac10f1091f09c32b188b",
+  "baseline_text_submission_sha256": "0ecbaaade687b8dcf52c2c885ea35ce985e11dfddd6fe21997c8762d3654d55f",
+  "expected_submission_sha256": "71a7d2b6930ff04f80336d8cb1fdd6cb61222a5bceb51e1ffe2e987c00ff88e1",
+  "user_reported_public_rmse": 0.48537,
+  "interpretation": "Observed public-score improvement supports this transform on the public subset, but does not establish the true label generation mechanism or private score."
+}

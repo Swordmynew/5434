@@ -1,0 +1,27 @@
+{
+  "seed": 5434,
+  "archive": "comp-5434-20261-project-task-2.zip",
+  "raw_dir": "data/raw",
+  "run_dir": "runs/main",
+  "expected_test_rows": 10000,
+  "minimum_free_gb": 20,
+  "gpu_budget_hours": 72,
+  "pilot": {"enabled": true, "rows": 100000, "hours_per_candidate": 1.5},
+  "spark": {"master": "local[8]", "partitions": 64, "driver_memory": "12g", "executor_memory": "8g", "executor_cores": 4, "cores_max": 8},
+  "split": {"calibration_size": 50000, "validation_size": 50000, "folds": 5, "strategy": "stratified"},
+  "features": {"smoothing": 20.0},
+  "baseline": {"hash_features": 1048576, "reg_param": 0.1, "max_iter": 40, "drop_title": false},
+  "text": {
+    "backbone": "microsoft/deberta-v3-base", "revision": "main", "pretrained_allowed": false,
+    "mode": "pretrained", "max_length": 192, "title_tokens": 32,
+    "batch_size": 16, "accumulation": 4, "epochs": 2,
+    "learning_rate": 0.00002, "head_learning_rate": 0.0001,
+    "weight_decay": 0.01, "ce_weight": 0.2, "dropout": 0.1,
+    "workers": 4, "tokenizer_workers": 4, "amp": true,
+    "gradient_checkpointing": true, "max_hours": 36,
+    "max_train_rows": null, "drop_title": false, "evaluate_every_steps": 2000,
+    "scratch_vocab_size": 30000, "scratch_hidden": 128, "scratch_layers": 2
+  },
+  "relation": {"embedding_dim": 32, "batch_size": 4096, "epochs": 8, "learning_rate": 0.001, "weight_decay": 0.0001, "patience": 2, "workers": 2, "max_hours": 4, "drop_user": false, "drop_parent": false},
+  "device": "auto"
+}
